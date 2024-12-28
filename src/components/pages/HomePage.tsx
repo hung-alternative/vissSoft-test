@@ -1,25 +1,26 @@
 "use client";
 
-// # Component
-import { Layout } from "antd";
-import OverView from "@/components/overview/OverView";
-import Sidebar from "@/components/layouts/Sidebar";
-
-const { Content } = Layout;
+import Statistics from "@/components/overview/Statistics";
+import Header from "@/components/overview/Header";
+import ActivitySection from "@/components/overview/ActivitySection";
+import { useQuery } from "@tanstack/react-query";
 
 export default function HomePage() {
+  const { data } = useQuery({
+    queryKey: ["test"],
+    queryFn: async () => {
+      const res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+      return await res.json();
+    },
+  });
+
   return (
-    <Layout hasSider>
-      <Sidebar />
-      <Layout className="h-screen overflow-auto">
-        <Content
-          style={{
-            padding: 0,
-          }}
-        >
-          <OverView />
-        </Content>
-      </Layout>
-    </Layout>
+    <main>
+      <Header />
+      <div className={"px-8 py-6"}>
+        <Statistics />
+        <ActivitySection />
+      </div>
+    </main>
   );
 }

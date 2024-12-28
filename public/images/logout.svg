@@ -1,0 +1,26 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="majesticons:logout" clip-path="url(#clip0_4012_31)">
+<g id="Vector" filter="url(#filter0_d_4012_31)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8 2.66666C6.93913 2.66666 5.92172 3.08808 5.17157 3.83823C4.42143 4.58837 4 5.60579 4 6.66666V25.3333C4 26.3942 4.42143 27.4116 5.17157 28.1617C5.92172 28.9119 6.93913 29.3333 8 29.3333H16C17.0609 29.3333 18.0783 28.9119 18.8284 28.1617C19.5786 27.4116 20 26.3942 20 25.3333V6.66666C20 5.60579 19.5786 4.58837 18.8284 3.83823C18.0783 3.08808 17.0609 2.66666 16 2.66666H8ZM21.724 9.72399C21.974 9.47403 22.3131 9.33361 22.6667 9.33361C23.0202 9.33361 23.3593 9.47403 23.6093 9.72399L28.9427 15.0573C29.1926 15.3074 29.333 15.6464 29.333 16C29.333 16.3535 29.1926 16.6926 28.9427 16.9427L23.6093 22.276C23.3579 22.5189 23.0211 22.6533 22.6715 22.6502C22.3219 22.6472 21.9875 22.507 21.7402 22.2597C21.493 22.0125 21.3528 21.6781 21.3498 21.3285C21.3467 20.9789 21.4811 20.6421 21.724 20.3907L24.7813 17.3333H13.3333C12.9797 17.3333 12.6406 17.1928 12.3905 16.9428C12.1405 16.6927 12 16.3536 12 16C12 15.6464 12.1405 15.3072 12.3905 15.0572C12.6406 14.8071 12.9797 14.6667 13.3333 14.6667H24.7813L21.724 11.6093C21.474 11.3593 21.3336 11.0202 21.3336 10.6667C21.3336 10.3131 21.474 9.97403 21.724 9.72399Z" fill="url(#paint0_angular_4012_31)"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_4012_31" x="0" y="2.66666" width="33.3331" height="34.6667" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4012_31"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4012_31" result="shape"/>
+</filter>
+<radialGradient id="paint0_angular_4012_31" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(8.04046 25.4938) rotate(-50.2644) scale(25.3335 15.6898)">
+<stop stop-color="#0050E6"/>
+<stop offset="1" stop-color="#003BAA"/>
+</radialGradient>
+<clipPath id="clip0_4012_31">
+<rect width="32" height="32" fill="white"/>
+</clipPath>
+</defs>
+</svg>

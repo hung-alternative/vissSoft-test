@@ -11,14 +11,18 @@ const config: Config = {
     extend: {
       boxShadow: {
         "viss-inset": "-8px 8px 4px 0px rgba(0, 0, 0, 0.25) inset",
-        "viss-btn": "0px 4px 4px rgba(0, 0, 0, 0.25)",
+        "viss-header": "8px -8px 4px 0px rgba(0, 0, 0, 0.25) inset",
+        "viss-btn": "0 4px 4px 0 rgba(0, 0, 0, 0.25)",
       },
-      // backgroundImage: {
-      //   "viss-conic-text":
-      //     "conic-gradient(from 41deg at 15.95% 85.6%, #0050E5 0deg, #003BAA 360deg)",
-      // },
+      backgroundImage: {
+        "viss-gradient":
+          "conic-gradient(from var(--viss-deg, 41deg) at 15.95% 85.6%, #0050E5 0deg, #003BAA 360deg)",
+        "viss-gradient-btn":
+          "conic-gradient(from 200deg at 73.17% 16.67%, #0050E5 0deg, #003BAA 360deg)",
+      },
       textShadow: {
         viss: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+        none: "none",
       },
     },
   },

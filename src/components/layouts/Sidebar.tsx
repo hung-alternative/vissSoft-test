@@ -1,55 +1,15 @@
+"use client";
+
 // # Component
-import { Layout, Menu, MenuProps } from "antd";
-import { useState } from "react";
-import { usePathname } from "next/navigation";
-import { createStyles } from "antd-style";
-import { cn } from "@/lib/utils";
+import Menu, { MenuProps } from "@/components/layouts/Menu";
 import { Button } from "@/components/ui/button";
-
-const { Sider } = Layout;
-
-const useStyle = createStyles(({ css }) => {
-  return {
-    customSider: css`
-      .ant-menu {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-      }
-
-      .ant-menu-item {
-        border-radius: 20px;
-        height: 60px;
-        background: rgba(255, 255, 255, 0.3);
-        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-        backdrop-filter: blur(4px);
-        color: #fff;
-        text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-        font-size: 24px;
-        font-weight: 700;
-      }
-
-      .ant-menu-item-selected {
-        background: conic-gradient(
-          from 202deg at 73.17% 16.67%,
-          #0050e5 0deg,
-          #003baa 360deg
-        );
-      }
-
-      .ant-menu-title-content {
-        margin-left: 12px;
-      }
-    `,
-  };
-});
+import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 export default function Sidebar() {
   const [collapsed, setCollapsed] = useState(false);
-  const pathname = usePathname();
-  const { styles } = useStyle();
 
-  const MenuItems: MenuProps["items"] = [
+  const items: MenuProps["items"] = [
     {
       key: "/",
       icon: <img src={"images/dashboard.svg"} alt={"dashboard"} />,
@@ -74,58 +34,44 @@ export default function Sidebar() {
       key: "payment",
       icon: <img src={"images/payment.svg"} alt={"payment"} />,
       label: "THANH TOÁN",
+      type: "dropdown",
     },
   ];
 
   return (
-    <Sider
-      collapsible
-      collapsed={collapsed}
-      onCollapse={setCollapsed}
-      style={{
-        scrollbarWidth: "thin",
-        scrollbarColor: "unset",
-        insetInlineStart: 0,
-        background:
-          "conic-gradient( from 23deg at 15.95% 85.6%, #0050e5 0deg, #003baa 360deg )",
-        boxShadow: "inset -8px 8px 4px 0 rgba(0, 0, 0, 0.25)",
-      }}
-      className={cn(
-        styles.customSider,
-        "fixed bottom-0 left-0 top-0 h-screen overflow-auto",
-      )}
-      width={400}
-      trigger={null}
+    <div
+      className={"relative h-full w-[400px]"}
+      style={
+        {
+          "--viss-deg": "18deg",
+        } as Record<string, string>
+      }
     >
       <Button
-        size={"icon"}
-        className={"absolute right-0 top-10 z-50 translate-x-1/2"}
+        onClick={() => setCollapsed(!collapsed)}
+        variant={"icon"}
+        className={"fixed left-[400px] top-[49px] z-50 w-12 -translate-x-1/2"}
       >
-        <img src={"images/arrow.svg"} className={"h-[26px] w-[17px]"} />
+        <img
+          src={"images/arrow.svg"}
+          className={cn("mt-2", {
+            "-scale-x-100": collapsed,
+          })}
+        />
       </Button>
 
       <div
-        className={"flex h-full w-full flex-col justify-between p-[60px] pr-10"}
+        className={
+          "bg-viss-gradient fixed inset-0 flex w-[400px] flex-col justify-between gap-6 overflow-y-auto p-[60px] pr-10"
+        }
       >
-        <div className={"flex flex-[2] flex-col gap-[158px]"}>
-          <img src="/images/Logo.svg" alt="logo" className={"w-[130px]"} />
-          <Menu
-            mode="inline"
-            selectedKeys={[pathname]}
-            items={MenuItems}
-            style={{
-              backgroundColor: "transparent",
-              border: "none",
-            }}
-          />
-        </div>
-        <div className={"flex h-full flex-1 items-end"}>
-          <Button variant={"secondary"} className={"w-full"}>
-            <img src="/images/logout.svg" alt="logout" />
-            <span>Đăng xuất</span>
-          </Button>
-        </div>
+        <img src="images/logo.svg" alt="logo" className={"w-[130px]"} />
+        <Menu items={items} />
+        <Button variant={"secondary"} className={"w-full shrink-0"}>
+          <img src={"images/logout.svg"} alt={"logout"} />
+          <span>Đăng xuất</span>
+        </Button>
       </div>
-    </Sider>
+    </div>
   );
 }
